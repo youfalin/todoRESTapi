@@ -1,0 +1,31 @@
+{
+  "name": "todorestapi",
+  "version": "1.0.0",
+  "description": "RESTful todo api using typescript , express , postgresql ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "test": "jest"
+  },
+  "author": "youfalin",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "nodemon": "^3.1.7",
+    "prisma": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
