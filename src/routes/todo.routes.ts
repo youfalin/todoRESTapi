@@ -7,6 +7,7 @@ import {
   deleteTodo,
 } from "../controllers/todo.controller";
 
+
 const router = Router();
 
 router.get("/", getTodos);

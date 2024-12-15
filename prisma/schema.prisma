@@ -7,11 +7,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        String   @id @default(cuid()) // Use cuid for unique string-based IDs
+  email     String   @unique
+  password  String
+  todos     Todo[]   // Relation: A user can have multiple todos
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Todo {
-  id   String   @id @default(cuid())
+  id          String   @id @default(cuid()) // Use cuid for unique string-based IDs
   title       String
   description String
-  finished   Boolean @default(false)
+  finished    Boolean @default(false)
+  userId      String   // Foreign key to link with User
+  user        User     @relation(fields: [userId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
